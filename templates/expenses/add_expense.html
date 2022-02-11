@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<div class="container">
+    <nav aria-label="breadcrumb" class='mt-4'>
+        <ol class="breadcrumb p-2">
+            <li class="breadcrumb-item"><a href="{% url 'expenses' %}">Expenses</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Add Expenses</li>
+        </ol>
+    </nav>
+
+    <form action="{% url 'add_expense' %}" method="post">
+        {% csrf_token %}
+        {% include 'partials/_messages.html' %}
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="">Amount</label>
+                    <input type="text" name="amount" value="{{values.amount}}" id="" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <label for="">Description</label>
+                    <input type="text" name="description" value="{{values.description}}" id="" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <label for="">Category</label>
+                    <select name="category" id="" class="form-select form-select-sm">
+                        {% for category in categories %}
+                        <option name="category" value="{{category.name}}">{{category.name}}</option>
+                       {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="">Date of Expense</label>
+                    <input type="date" name="expense_date" value="{{values.expense_date}}" id="" class="form-control form-control-sm">
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Submit" id="" class="btn btn-primary form-control form-control-sm">
+                </div>
+               
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

@@ -20,9 +20,10 @@ from django.conf import settings
 from expenses import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('expenses.urls')),
     path('authentication/', include('authentication.urls')),
+    path('preferences/', include('userpreferences.urls')),
+    path('admin/', admin.site.urls),
     
 ]
 

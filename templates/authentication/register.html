@@ -1,4 +1,5 @@
 {% extends 'partials/base_auth.html' %}
+{% load static %}
 {% block content %}
 <div class="row">
     <div class="col-md-4"></div>
@@ -8,18 +9,30 @@
                 <h4>Register for a free account</h4>
             </div>
             <div class='card-body'>
-                <form action="" method="post">
+                <form action="{% url 'register' %}" method="post">
+                    {% csrf_token %}
+                    {% include 'partials/_messages.html' %}
                     <div class="form-group">
-                        <input type="email" name="email" id="emailField" placeholder='Email' class="form-control form-control-sm mb-3">
+                        <input type="email" name="email" id="emailField" value="{{fieldValue.email}}" placeholder='Email' class="form-control form-control-sm mb-3">
                     </div>
+                    <div class="invalid-feedback emailFeedback" style='display:none;'>
+                       
+                    </div>
+                    <p class='text-sm text-success emailSuccessOutput'></p>
                     <div class="form-group">
-                        <input type="text" name="username" id="userNameField" placeholder='User Name' class='form-control form-control-sm mb-3'>
+                        <input type="text" name="username" id="userNameField" value='{{fieldValue.username}}' placeholder='User Name Here' class='form-control form-control-sm mb-3'>
                     </div>
+                    <div class="invalid-feedback usernameFeedback" style='display:none;'>
+                       
+                    </div>
+                    <p class='text-sm text-success usernameSuccessOutput'></p>
                     <div class="form-group">
-                        <input type="password" name="passsword" id="passwordField" placeholder='Password' class="form-control form-control-sm mb-3">
-                        <!-- <span class="float-right">show</span> -->
+                        <input type="password" name="password" id="passwordField" placeholder='Password' class="form-control form-control-sm mb-3">
+                        <p class="showPasswordToggle">show</p>    
                     </div>
-                    <input type="submit" value="Register" class="btn btn-primary form-control form-control-sm mb-3">
+                    
+                    
+                    <input type="submit" value="Register" class="submit-btn btn btn-primary form-control form-control-sm mb-3">
                     
                 </form>
             </div>
@@ -30,4 +43,6 @@
 
     <div class="col-md-4"></div>
 </div>
+
+<script src="{% static 'js/register.js' %}" ></script>
 {% endblock %}

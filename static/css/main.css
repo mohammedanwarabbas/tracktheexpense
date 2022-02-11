@@ -38,4 +38,12 @@
   left:0;
   top:0
  }
- 
+ .showPasswordToggle{
+   cursor:pointer;
+   transition-property: all;
+   transition-duration:2s;
+ }
+ .showPasswordToggle:hover{
+  font-weight: bold;
+  text-shadow: 1px 1px 1px red;
+ }

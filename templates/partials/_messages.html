@@ -1,0 +1,20 @@
+{% if messages %}
+<div class="messages">
+    {% for message in messages %}
+    <div{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>
+        {{ message }}
+</div>
+
+    {% endfor %}
+</div>
+{% endif %}
+
+
+
+<!-- NOTES
+messages.tags are values of 
+    messages.success = success
+    messages.error = error
+    messages.info = info
+    messages.warning = warning
+    messages.debug = debug -->
