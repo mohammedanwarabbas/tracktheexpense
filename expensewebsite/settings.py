@@ -92,29 +92,19 @@ WSGI_APPLICATION = 'expensewebsite.wsgi.application'
 # }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'dfj2k8opo1ro7u',
-#         'USER' : 'ltoqqdlugpguyv',
-#         'PASSWORD' : '524492f44528f93b7c177c1d256f1c01521394361bc4f49dee14313893ff6459',
-#         'HOST' : 'ec2-3-228-75-39.compute-1.amazonaws.com',
-#         'PORT' : '5432',
-#     }
-# }
-
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'incomeexpensesdb',
-        'USER' : 'postgres',
-        'PASSWORD' : 'password',
-        'HOST' : 'localhost',
-        'PORT' : '5432'
+        'NAME': 'dfj2k8opo1ro7u',
+        'USER' : 'ltoqqdlugpguyv',
+        'PASSWORD' : '524492f44528f93b7c177c1d256f1c01521394361bc4f49dee14313893ff6459',
+        'HOST' : 'ec2-3-228-75-39.compute-1.amazonaws.com',
+        'PORT' : '5432',
     }
 }
+
+
+
 
 
 # Password validation
