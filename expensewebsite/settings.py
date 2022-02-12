@@ -80,17 +80,28 @@ WSGI_APPLICATION = 'expensewebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ.get('NAME'),
+#         'USER' : os.environ.get('USER'),
+#         'PASSWORD' : os.environ.get('PASSWORD'),
+#         'HOST' : os.environ.get('HOST'),
+#         'PORT' : os.environ.get('PORT'),
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('NAME'),
-        'USER' : os.environ.get('USER'),
-        'PASSWORD' : os.environ.get('PASSWORD'),
-        'HOST' : os.environ.get('HOST'),
-        'PORT' : os.environ.get('PORT'),
+        'NAME': 'dfj2k8opo1ro7u',
+        'USER' : 'ltoqqdlugpguyv',
+        'PASSWORD' : '524492f44528f93b7c177c1d256f1c01521394361bc4f49dee14313893ff6459',
+        'HOST' : 'ec2-3-228-75-39.compute-1.amazonaws.com',
+        'PORT' : '5432',
     }
 }
-
 
 
 
